@@ -1,0 +1,14 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: apt install pip
+  apt: name=python-pip
+
+- name: apt install python-dev
+  apt: name=python-dev
+
+- name: pip install pip
+  pip: name=pil
+
+- name: pip install web.py
+  pip: name=web.py

@@ -1,0 +1,23 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+
+- name: update to 163 sources
+  template: src=sources.list dest=/etc/apt/sources.list
+
+- name: update apt-get local cache
+  shell: apt-get update
+
+- name: install pil package
+  apt: name={{item}}
+  with_items:
+  - libfreetype6-dev
+  - libjpeg8-dev
+  - zlib1g-dev
+
+- name: install libxslt-dev, libxml2, libxml2-dev
+  apt: name={{item}}
+  with_items:
+  - libxslt-dev
+  - libxml2
+  - libxml2-dev

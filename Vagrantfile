@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "u1304.box"
+  config.vm.box = "u1304"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -20,12 +20,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host: 13800
-  #config.vm.network "forwarded_port", guest: 5000, host: 13500
-  #config.vm.network "forwarded_port", guest: 6006, host: 13600
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.33"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -87,20 +86,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  config.vm.provision "chef_solo" do |chef|
-    chef.cookbooks_path = "cookbooks"
-    chef.add_recipe "apt"
-    chef.add_recipe "python-dev"
-    chef.add_recipe "python-mysqldb"
-    chef.add_recipe "pip-pil"
-    # chef.roles_path = "../my-recipes/roles"
-    # chef.data_bags_path = "../my-recipes/data_bags"
-    # chef.add_recipe "mysql"
-    # chef.add_role "web"
-  
-    # You may also specify custom JSON attributes:
-    # chef.json = { mysql_password: "foo" }
-  end
+  # config.vm.provision "chef_solo" do |chef|
+  #   chef.cookbooks_path = "../my-recipes/cookbooks"
+  #   chef.roles_path = "../my-recipes/roles"
+  #   chef.data_bags_path = "../my-recipes/data_bags"
+  #   chef.add_recipe "mysql"
+  #   chef.add_role "web"
+  #
+  #   # You may also specify custom JSON attributes:
+  #   chef.json = { mysql_password: "foo" }
+  # end
+   config.vm.provision "ansible" do |ansible|
+     ansible.playbook = "ansible/playbook.yml"
+     ansible.verbose = 'vvvv'
+     ansible.sudo = true
+   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).

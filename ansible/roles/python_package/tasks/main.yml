@@ -10,5 +10,9 @@
 - name: pip install pip
   pip: name=pil
 
+# for web dev
 - name: pip install web.py
   pip: name=web.py
+
+- name: pip install jinja2
+  pip: name=jinja2

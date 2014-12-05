@@ -8,6 +8,9 @@
 - name: update apt-get local cache
   shell: apt-get update
 
+- name: apt install virtualenv
+  apt: name=python-virtualenv
+
 - name: install pil package
   apt: name={{item}}
   with_items:

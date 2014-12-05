@@ -1,0 +1,9 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+# for web dev
+- name: pip install web.py
+  pip: name=web.py
+
+- name: pip install jinja2
+  pip: name=jinja2

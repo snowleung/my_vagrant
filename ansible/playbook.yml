@@ -8,3 +8,5 @@
     - common
     - db
     - python_package
+#    - django_package
+#    - webpy_package

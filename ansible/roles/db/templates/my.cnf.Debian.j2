@@ -4,7 +4,7 @@
 [client]
 port		= {{ mysql_port }}
 socket		= /var/run/mysqld/mysqld.sock
-character-set-server=utf8
+#character-set-server=utf8
 
 # This was formally known as [safe_mysqld]. Both versions are currently parsed.
 [mysqld_safe]
@@ -12,7 +12,7 @@ socket		= /var/run/mysqld/mysqld.sock
 nice		= 0
 
 [mysqld]
-character-set-server=utf8
+#character-set-server=utf8
 user		= mysql
 pid-file	= /var/run/mysqld/mysqld.pid
 socket		= /var/run/mysqld/mysqld.sock

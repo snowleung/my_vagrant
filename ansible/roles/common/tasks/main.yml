@@ -11,6 +11,9 @@
 - name: apt install virtualenv
   apt: name=python-virtualenv
 
+- name: apt install make
+  apt: name=make
+
 - name: install pil package
   apt: name={{item}}
   with_items:

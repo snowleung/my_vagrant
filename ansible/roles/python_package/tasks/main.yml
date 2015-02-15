@@ -9,3 +9,6 @@
 
 - name: pip install pip
   pip: name=pil
+
+- name: pip install httpie
+  pip: name=httpie

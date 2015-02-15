@@ -12,3 +12,6 @@
 
 - name: update apt-get local cache
   shell: apt-get update
+
+- name: install docker
+  apt: name=lxc-docker

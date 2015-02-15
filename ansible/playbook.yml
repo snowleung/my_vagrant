@@ -7,6 +7,7 @@
   roles:
     - common
     - python_package
-#    - db
-#    - django_package
-#    - webpy_package
+    - docker_pkg
+    # - db
+    # - django_package
+    # - webpy_package

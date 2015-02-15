@@ -1,0 +1,14 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+
+- name: add pkg key
+  sudo: yes
+  shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+
+- name: append source to list
+  sudo: yes
+  shell: echo "deb http://get.docker.com/ubuntu docker main" >> /etc/apt/sources.list
+
+- name: update apt-get local cache
+  shell: apt-get update

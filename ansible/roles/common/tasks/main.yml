@@ -2,8 +2,8 @@
 # This playbook contains common plays that will be run on all nodes.
 
 
-- name: update to 163 sources
-  template: src=sources.list dest=/etc/apt/sources.list
+#- name: update to 163 sources
+#  template: src=sources.list dest=/etc/apt/sources.list
 
 - name: update apt-get local cache
   shell: apt-get update

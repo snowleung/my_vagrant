@@ -2,10 +2,7 @@ my vagrant file with ansible
 ============
 
 ##BASE 
-* base on ubuntu 13.04  
+* base on ubuntu 14.04
 
-##INCLUDE
-* mysql  
-* redis  
-* python-dev
-
+##CHANGED
+* using docker

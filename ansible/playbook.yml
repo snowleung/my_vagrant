@@ -14,4 +14,4 @@
     - name: load mysql
       shell: docker load < /vagrant/docker_files/mysql.tar.gz
     - name: load mongo
-      shell: docker load < /vagrant/docker_files/mysql.tar.gz
+      shell: docker load < /vagrant/docker_files/mongo.tar.gz

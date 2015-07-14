@@ -2,6 +2,9 @@
 - name: install redis
   apt: name=redis-server
 
+- name: install Mongodb
+  apt: name=mongodb
+
 - name: Add the OS specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 

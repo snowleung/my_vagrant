@@ -20,7 +20,7 @@
     - name: virtualenvwrapper
       pip: name=virtualenvwrapper
     - name: source it
-      shell: source /usr/local/bin/virtualenvwrapper.sh
+      shell: source /usr/local/bin/virtualenvwrapper.sh executable=/bin/bash
     - name: load redis
       shell: docker load < /vagrant/docker_files/redis.tar.gz
     - name: load mysql

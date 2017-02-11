@@ -5,7 +5,7 @@
 - name: update to 163 sources
   template: src=sources.list dest=/etc/apt/sources.list
 
-- name: update apt-get local cache
+- name: apt get update
   shell: apt-get update
 
 - name: apt install virtualenv

@@ -9,10 +9,13 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
 
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "base"
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "u1404-docker"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

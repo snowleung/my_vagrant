@@ -7,5 +7,5 @@
 - name: apt install python-dev
   apt: name=python-dev
 
-- name: pip install pip
-  pip: name=pil
+- name: install ipython
+  apt: name=ipython

@@ -1,13 +1,16 @@
 ---
 # This playbook deploys the whole application stack in this site.  
-
 - name: apply common configuration to all nodes
   hosts: all
-
   roles:
     - common
     - python_package
-    - docker_pkg
-    # - db
-    # - django_package
-    # - webpy_package
+  become: true
+   
+- hosts: all
+  tasks:
+    - name: install mysql client
+      apt: name=mysql-client-core-5.5
+    - name: install mongo client
+      apt: name=mongodb-clients
+  become: true

@@ -2,14 +2,11 @@
 # This playbook contains common plays that will be run on all nodes.
 
 
-- name: update to 163 sources
+- name: update sources
   template: src=sources.list dest=/etc/apt/sources.list
 
 - name: apt get update
   shell: apt-get update
-
-- name: apt install virtualenv
-  apt: name=python-virtualenv
 
 - name: apt install make
   apt: name=make
@@ -20,7 +17,7 @@
 - name: apt install git
   apt: name=git
 
-- name: install pil package
+- name: install libfreetype6-dev, libjpeg8-dev, zlib1g-dev
   apt: name={{item}}
   with_items:
   - libfreetype6-dev

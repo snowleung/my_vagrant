@@ -5,19 +5,12 @@
   roles:
     - common
     - python_package
-
+  become: true
+   
 - hosts: all
-  sudo: yes
   tasks:
     - name: install mysql client
       apt: name=mysql-client-core-5.5
     - name: install mongo client
       apt: name=mongodb-clients
-    - name: install ipython
-      apt: name=ipython
-    - name: install Supervisor
-      pip: name=Supervisor
-    - name: virtualenvwrapper
-      pip: name=virtualenvwrapper
-    - name: source it
-      shell: source /usr/local/bin/virtualenvwrapper.sh executable=/bin/bash
+  become: true

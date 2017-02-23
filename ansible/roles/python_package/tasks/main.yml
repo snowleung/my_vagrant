@@ -6,3 +6,6 @@
 
 - name: apt install python-dev
   apt: name=python-dev
+
+- name: install ipython
+  apt: name=ipython

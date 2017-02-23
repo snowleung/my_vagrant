@@ -8,6 +8,9 @@
 - name: apt get update
   shell: apt-get update
 
+- name: apt autoremove
+  shell: apt-get autoremove
+
 - name: apt install make
   apt: name=make
 

@@ -16,6 +16,8 @@
   with_items:
     - cmd: echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
     - cmd: echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+    - cmd: echo 'export PYTHON_BUILD_CACHE_PATH=/workspace/' >> ~/.bash_profile
+    - cmd: echo 'export PYTHON_BUILD_MIRROR_URL=/workspace/' >> ~/.bash_profile
     - cmd: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
     - cmd: exec $SHELL
     - cmd: echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile

@@ -18,3 +18,9 @@
   become_user: vagrant
   roles:
     - python_package
+  tasks:
+    - name: pyenv install 3.6.0
+      shell: ". ~/.bash_profile && pyenv install -s 3.6.0"
+
+    - name: pyenv build virtual 3.6.0 [dev] environment
+      shell: ". ~/.bash_profile && pyenv virtualenv 3.6.0 dev"

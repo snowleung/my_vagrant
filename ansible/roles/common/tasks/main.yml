@@ -10,37 +10,43 @@
     update_cache: yes
     autoremove: yes
 
-- name: apt install make
-  apt: name=make
-
 - name: apt install curl
-  apt: name=curl
+  apt: name={{item}}
+  with_items:
+    - curl
+    - wget
 
 - name: apt install git
   apt: name=git
 
 - name: apt install python-dev
-  apt: name=python-dev
-
-- name: apt install pip
-  apt: name=python-pip
+  apt: name={{item}}
+  with_items:
+    - python-dev
+    - python-pip
 
 - name: apt install devel package
   apt: name={{item}}
   with_items:
-    - gcc
-    - openssl
+    - make
+    - build-essential
+    - libssl-dev
+    - zlib1g-dev
+    - libbz2-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - llvm
 
 - name: install libfreetype6-dev, libjpeg8-dev, zlib1g-dev
   apt: name={{item}}
   with_items:
-  - libfreetype6-dev
-  - libjpeg8-dev
-  - zlib1g-dev
+    - libfreetype6-dev
+    - libjpeg8-dev
+    - zlib1g-dev
 
 - name: install libxslt-dev, libxml2, libxml2-dev
   apt: name={{item}}
   with_items:
-  - libxslt-dev
-  - libxml2
-  - libxml2-dev
+    - libxslt-dev
+    - libxml2
+    - libxml2-dev

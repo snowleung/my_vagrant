@@ -2,15 +2,19 @@
 # This playbook deploys the whole application stack in this site.  
 - name: apply common configuration to all nodes
   hosts: all
+  become: true
   roles:
     - common
-    - python_package
-  become: true
+  # tasks:
+  #   - name: install mysql client
+  #     apt: name=mysql-client-core-5.5
+  #   - name: install mongo client
+  #     apt: name=mongodb-clients
+
+
    
-- hosts: all
-  tasks:
-    - name: install mysql client
-      apt: name=mysql-client-core-5.5
-    - name: install mongo client
-      apt: name=mongodb-clients
+- hosts: web_flask
   become: true
+  become_user: vagrant
+  roles:
+    - python_package

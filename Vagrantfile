@@ -67,8 +67,16 @@ Vagrant.configure("2") do |config|
   #
   # Run Ansible from the Vagrant Host
   #
+  #config.vm.define "web_django"
+  config.vm.define "web_flask"
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
     ansible.verbose = "vvv"
+    ansible.host_vars = {
+      "web_flask" => {"http_port" => 80,
+                  "maxRequestsPerChild" => 808},
+      "web_django" => {"http_port" => 303,
+                  "maxRequestsPerChild" => 909}
+    }
   end
 end

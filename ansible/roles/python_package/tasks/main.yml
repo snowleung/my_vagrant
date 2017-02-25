@@ -1,11 +1,30 @@
 ---
 # This playbook contains common plays that will be run on all nodes.
 
-- name: apt install pip
-  apt: name=python-pip
+- name: install pyenv
+  git:
+    repo: https://github.com/yyuu/pyenv.git
+    dest: /home/vagrant/.pyenv
 
-- name: apt install python-dev
-  apt: name=python-dev
+- name: install pyenv-virtualenv
+  git:
+    repo: https://github.com/yyuu/pyenv-virtualenv.git
+    dest: /home/vagrant/.pyenv/plugins/pyenv-virtualenv
+      
+- name:  config pyenv, pyenv-virtualenv
+  shell: "{{ item.cmd }}"
+  with_items:
+    - cmd: echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+    - cmd: echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+    - cmd: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    - cmd: exec $SHELL
+    - cmd: echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
 
-- name: install ipython
-  apt: name=ipython
+# - name: apt install pip
+#   apt: name=python-pip
+
+# - name: apt install python-dev
+#   apt: name=python-dev
+
+# - name: install ipython
+#   apt: name=ipython

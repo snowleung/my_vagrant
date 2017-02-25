@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "web_flask"
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
-    ansible.verbose = "vvv"
+    ansible.verbose = "vvvvv"
     ansible.host_vars = {
       "web_flask" => {"http_port" => 80,
                   "maxRequestsPerChild" => 808},

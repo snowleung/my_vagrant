@@ -5,11 +5,13 @@
   git:
     repo: https://github.com/yyuu/pyenv.git
     dest: /home/vagrant/.pyenv
+    clone: no
 
 - name: install pyenv-virtualenv
   git:
     repo: https://github.com/yyuu/pyenv-virtualenv.git
     dest: /home/vagrant/.pyenv/plugins/pyenv-virtualenv
+    clone: no
       
 - name:  config pyenv, pyenv-virtualenv
   shell: "{{ item.cmd }}"

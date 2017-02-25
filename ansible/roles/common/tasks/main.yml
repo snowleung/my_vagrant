@@ -19,6 +19,12 @@
 - name: apt install git
   apt: name=git
 
+- name: apt install python-dev
+  apt: name=python-dev
+
+- name: apt install pip
+  apt: name=python-pip
+
 - name: install libfreetype6-dev, libjpeg8-dev, zlib1g-dev
   apt: name={{item}}
   with_items:

@@ -1,6 +1,10 @@
 # local
+workspace/*
 docker_files
 # Created by https://www.gitignore.io
+
+### ANSIBLE ###
+*.retry
 
 ### Vagrant ###
 .vagrant/

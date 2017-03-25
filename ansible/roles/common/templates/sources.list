@@ -1,11 +1,10 @@
-deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
-##测试版源
-deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
-# 源码
-deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+# 来自 https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty main main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
